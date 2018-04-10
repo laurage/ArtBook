@@ -1,0 +1,27 @@
+.day {
+  width: 88px;
+  height: 88px;
+  border: 1px solid #EDEDED;
+  font-size: 9px;
+  cursor: pointer;
+}
+
+.day:hover {
+  background: #EDEDED;
+}
+
+.dayName {
+  padding: 10px;
+}
+
+.dayNumber {
+  padding: 0px 10px 10px 10px;
+}
+
+.unselected {
+  background-color: #FBFBFB;
+}
+
+.selected {
+  background-color: #00BBD3;
+}
