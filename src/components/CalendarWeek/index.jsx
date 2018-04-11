@@ -2,7 +2,7 @@ import React from 'react'
 import './style.css'
 import { DAYS } from '../../constants'
 
-import { CalendarDay } from '../CalendarDay'
+import CalendarDay from '../CalendarDay'
 
 export class CalendarWeek extends React.Component {
   render() {
@@ -18,4 +18,3 @@ export class CalendarWeek extends React.Component {
     )
   }
 }
-//day={week}

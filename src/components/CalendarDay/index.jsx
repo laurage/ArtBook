@@ -1,5 +1,7 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import './style.css'
+import { setSelectedDay, getSelectedDay } from '../../actions'
 
 export class CalendarDay extends React.Component {
   constructor() {
@@ -15,26 +17,35 @@ export class CalendarDay extends React.Component {
     this.handleClick = this.handleClick.bind(this)
   }
 
+  ComponentWillUpdate() {
+    this.props.getSelectedDay()
+  }
+
   handleClick(selectedDay) {
     console.log(selectedDay)
 
-    if (this.state.selectedCellId.first === null) {
-      console.log('first cell')
-      // here we are changing the state of the cell itself, so everytime we click on a different cell its first cell is null. So instead we need to
-      // pass our selectedCellId to the global state (ie use redux)
-      this.setState({
-        selected: true,
-        selectedCellId: {
-          first: selectedDay
-        }
-      })
-    }
+    this.props.setSelectedDay(selectedDay)
+
+    // if (this.state.selectedCellId.first === null) {
+      // console.log('first cell')
+      // this.setState({
+      //   selected: true,
+      //   selectedCellId: {
+      //     first: selectedDay
+      //   }
+      // })
+    // }
   }
+
+  isSelected(day, selectedDay) {
+    return selectedDay === day
+  }
+
   render() {
-    const { dayNumber, dayName, day } = this.props
+    const { dayNumber, dayName, day, selectedDay } = this.props
     return(
       <div
-        className={`day ${ this.state.selected ? "selected" : "unselected" } ${ this.state.onSelectedSlot ? "on-selected-slot" : "" }`}
+        className={`day ${ this.isSelected(day, selectedDay) ? "selected" : "unselected" } ${ this.state.onSelectedSlot ? "on-selected-slot" : "" }`}
         onClick={this.handleClick.bind(this, day)}>
         <div className="dayName">
           {dayName}
@@ -46,3 +57,13 @@ export class CalendarDay extends React.Component {
     )
   }
 }
+
+const mapStateToProps = ({ selectionPeriod }) => ({
+  selectedDay: selectionPeriod.selectedDay,
+})
+
+const mapDispatchToProps = {
+  setSelectedDay,
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CalendarDay)

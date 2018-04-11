@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Provider } from 'react-redux'
+import store from './store'
 import './App.css';
 
 import { Calendar } from './components/Calendar'
@@ -9,7 +11,9 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
         </header>
-        <Calendar />
+        <Provider store={store}>
+          <Calendar />
+        </Provider>
       </div>
     );
   }
