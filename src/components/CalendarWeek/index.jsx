@@ -9,7 +9,7 @@ export class CalendarWeek extends React.Component {
     const { week } = this.props
     let daysOfWeekNumbers = []
     for(let i = 0; i <= 6; i++) {
-      daysOfWeekNumbers.push(<span key={week[i]}><CalendarDay dayName={DAYS[i]} dayNumber={week[i].date()}/></span>)
+      daysOfWeekNumbers.push(<span key={week[i]}><CalendarDay dayName={DAYS[i]} dayNumber={week[i].date()} day={week[i]}/></span>)
     }
     return(
       <div className="week">
@@ -18,3 +18,4 @@ export class CalendarWeek extends React.Component {
     )
   }
 }
+//day={week}

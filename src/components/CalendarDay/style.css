@@ -25,3 +25,7 @@
 .selected {
   background-color: #00BBD3;
 }
+
+.on-selected-slot {
+  background-color: #9DEDF7;
+}
