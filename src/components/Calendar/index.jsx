@@ -11,9 +11,6 @@ import { CalendarMonth } from '../CalendarMonth'
 export class Calendar extends React.Component {
   render() {
     const currentDate = moment()
-
-    console.log('currentDate', currentDate)
-
     return (
       <CalendarMonth currentDate={currentDate} monthName={MONTH[currentDate.month()]}/>
     )
