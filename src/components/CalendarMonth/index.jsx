@@ -6,24 +6,17 @@ import { CalendarWeek } from '../CalendarWeek'
 export class CalendarMonth extends React.Component {
 
   render() {
-    const { monthName, currentDate } = this.props
+    const { displayedMoment } = this.props
 
     let matrix = []
-    let startOfTheWeekNumber
 
-    createWeeksMatrix(currentDate).map((week) => {
-      console.log('day', week[0].date())
+    createWeeksMatrix(displayedMoment).map((week) => {
       matrix.push(<CalendarWeek key={week} week={week}/>)
     })
 
     return(
-      <div>
-        <div className="month-name">
-          {monthName}
-        </div>
-        <div className="calendar">
-          {matrix}
-        </div>
+      <div className="calendar">
+        {matrix}
       </div>
     )
   }

@@ -1,8 +1,8 @@
 import moment from 'moment'
 
-export const createWeeksMatrix = (currentDate) => {
-  const startOfMonth = moment(currentDate).startOf('month')
-  const endOfMonth = moment(currentDate).endOf('month')
+export const createWeeksMatrix = (displayedMoment) => {
+  const startOfMonth = moment(displayedMoment).startOf('month')
+  const endOfMonth = moment(displayedMoment).endOf('month')
   const numberOfDaysFromPreviousMonthOnPanel = (startOfMonth.day() === 0) ? 6 : startOfMonth.day() - 1
 
   const startOfCurrentPanel = startOfMonth.clone().subtract(numberOfDaysFromPreviousMonthOnPanel, 'day')
@@ -11,17 +11,17 @@ export const createWeeksMatrix = (currentDate) => {
   const currentDayToBeDrawn = startOfCurrentPanel.clone();
 
   let numberOfDaysNextMonthOnPanel
-  console.log('firstdays', numberOfDaysFromPreviousMonthOnPanel + endOfMonth.date())
-  if (numberOfDaysFromPreviousMonthOnPanel + endOfMonth.date() > 35) {
-    numberOfDaysNextMonthOnPanel = 42 - 35
+
+  const numberOfDaysPreviousAndCurrentMonthOnPanel = numberOfDaysFromPreviousMonthOnPanel + endOfMonth.date()
+  if (numberOfDaysPreviousAndCurrentMonthOnPanel === 35) {
+    numberOfDaysNextMonthOnPanel = 0
+  } else if (numberOfDaysPreviousAndCurrentMonthOnPanel > 35) {
+    numberOfDaysNextMonthOnPanel = 42 - numberOfDaysPreviousAndCurrentMonthOnPanel
+  } else {
+    numberOfDaysNextMonthOnPanel = 35 - numberOfDaysPreviousAndCurrentMonthOnPanel
   }
 
-  const totalDaysOnPanel = numberOfDaysFromPreviousMonthOnPanel + endOfMonth.date() + numberOfDaysNextMonthOnPanel -1
-  console.log(totalDaysOnPanel)
-  // let numberOfLinesOnPanel = 4
-  // if (numberOfDaysFromPreviousMonthOnPanel + endOfMonth.date() > 35) {
-  //   numberOfLinesOnPanel = true
-  // }
+  const totalDaysOnPanel = numberOfDaysFromPreviousMonthOnPanel + endOfMonth.date() + numberOfDaysNextMonthOnPanel
 
   for (let i = 0; i < totalDaysOnPanel; i += 1) {
     // at 0, 7, 14, 21, 28 we create a new array that we push in our matrix of arrays, weeksOnPanel
@@ -37,6 +37,5 @@ export const createWeeksMatrix = (currentDate) => {
 
     currentDayToBeDrawn.add(1, 'day');
   }
-  console.log(weeksOnPanel)
 return weeksOnPanel
 }
