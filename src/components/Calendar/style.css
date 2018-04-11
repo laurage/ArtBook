@@ -1,0 +1,7 @@
+.chevron {
+  cursor: pointer;
+}
+
+.chevron:hover {
+  color: #EDEDED;
+}
