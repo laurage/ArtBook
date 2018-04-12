@@ -11,7 +11,9 @@ export class Calendar extends React.Component {
   constructor() {
     super()
     this.state = {
-      displayedMoment: moment(),
+      displayedMoment: moment.utc(), // without .utc, selectedDay is one day off.
+      // But using utc might break calendar use with different locales
+      // momentjs documentation discusses utc use. http://momentjs.com/guides/#/parsing/local-utc-zone/
     }
 
     this.handleClickLeft = this.handleClickLeft.bind(this)
