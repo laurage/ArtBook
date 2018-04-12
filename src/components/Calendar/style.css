@@ -1,10 +1,4 @@
-.box-container-top {
-  margin: 20px 20px 20px 20px;
-}
-
-.box-container-in {
-  margin: 20px 20px 20px 20px;
-}
+@import "../../assets/styles/utilities.scss";
 
 .calendar-header {
   display: flex;

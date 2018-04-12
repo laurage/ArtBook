@@ -10,6 +10,7 @@ https://github.com/epoberezkin/ajv/issues/708
 - sass + very beginning theme
 
 ## To Add
+- fragment
 - propTypes
 - eslint + airbnb config
 - nvm

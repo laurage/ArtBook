@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Provider } from 'react-redux'
 import store from './store'
 
-import { Calendar } from './components/Calendar'
+import { DraftTimeline } from './containers/DraftTimeline'
 
 class App extends Component {
   render() {
@@ -11,7 +11,7 @@ class App extends Component {
         <header className="App-header">
         </header>
         <Provider store={store}>
-          <Calendar />
+          <DraftTimeline />
         </Provider>
       </div>
     );
