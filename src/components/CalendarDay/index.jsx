@@ -22,30 +22,22 @@ export class CalendarDay extends React.Component {
   }
 
   handleClick(selectedDay) {
-    console.log(selectedDay)
-
     this.props.setSelectedDay(selectedDay)
-
-    // if (this.state.selectedCellId.first === null) {
-      // console.log('first cell')
-      // this.setState({
-      //   selected: true,
-      //   selectedCellId: {
-      //     first: selectedDay
-      //   }
-      // })
-    // }
   }
 
-  isSelected(day, selectedDay) {
-    return selectedDay === day
+  isSelected(day, selectedDayFirst, selectedDaySecond) {
+    return (selectedDayFirst === day) || (selectedDaySecond === day)
+  }
+
+  isOnSelectedSlot(day, selectedDayFirst, selectedDaySecond) {
+    return day.isBefore(selectedDaySecond) && day.isAfter(selectedDayFirst)
   }
 
   render() {
-    const { dayNumber, dayName, day, selectedDay } = this.props
+    const { dayNumber, dayName, day, selectedDayFirst, selectedDaySecond } = this.props
     return(
       <div
-        className={`day ${ this.isSelected(day, selectedDay) ? "selected" : "unselected" } ${ this.state.onSelectedSlot ? "on-selected-slot" : "" }`}
+        className={`day ${ this.isSelected(day, selectedDayFirst, selectedDaySecond) ? "selected" : "unselected" } ${ this.isOnSelectedSlot(day, selectedDayFirst, selectedDaySecond) ? "on-selected-slot" : "" }`}
         onClick={this.handleClick.bind(this, day)}>
         <div className="dayName">
           {dayName}
@@ -59,7 +51,8 @@ export class CalendarDay extends React.Component {
 }
 
 const mapStateToProps = ({ selectionPeriod }) => ({
-  selectedDay: selectionPeriod.selectedDay,
+  selectedDayFirst: selectionPeriod.selectedDayFirst,
+  selectedDaySecond: selectionPeriod.selectedDaySecond,
 })
 
 const mapDispatchToProps = {
