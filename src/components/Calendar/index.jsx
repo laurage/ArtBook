@@ -6,6 +6,7 @@ import { MONTH } from '../../constants'
 
 import { CalendarMonth } from '../CalendarMonth'
 import { ChevronLeft, ChevronRight } from '../SvgIcons'
+import { Button } from '../Button'
 
 export class Calendar extends React.Component {
   constructor() {
@@ -45,6 +46,7 @@ export class Calendar extends React.Component {
           <ChevronRight/>
         </span>
         <CalendarMonth displayedMoment={this.state.displayedMoment}/>
+        <Button>SAVE DRAFT TIMELINE</Button>
       </div>
     )
   }
