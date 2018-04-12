@@ -6,6 +6,7 @@ import { MONTH } from '../../constants'
 
 import { CalendarMonth } from '../CalendarMonth'
 import { ChevronLeft, ChevronRight } from '../SvgIcons'
+import { Button } from '../Button'
 
 export class Calendar extends React.Component {
   constructor() {
@@ -34,17 +35,24 @@ export class Calendar extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="month-name">
-          {`${MONTH[this.state.displayedMoment.month()]} ${this.state.displayedMoment.year()}`}
+      <div className="box-container-top">
+        <div className="box-container-in calendar-header">
+          <div className="month-name">
+            {`${MONTH[this.state.displayedMoment.month()]} ${this.state.displayedMoment.year()}`}
+          </div>
+          <span className="chevron" onClick={this.handleClickLeft}>
+            <ChevronLeft/>
+          </span>
+          <span className="chevron" onClick={this.handleClickRight}>
+            <ChevronRight/>
+          </span>
         </div>
-        <span className="chevron" onClick={this.handleClickLeft}>
-          <ChevronLeft/>
-        </span>
-        <span className="chevron" onClick={this.handleClickRight}>
-          <ChevronRight/>
-        </span>
-        <CalendarMonth displayedMoment={this.state.displayedMoment}/>
+        <div className="box-container-in">
+          <CalendarMonth displayedMoment={this.state.displayedMoment}/>
+        </div>
+        <div className="box-container-in">
+          <Button>SAVE DRAFT TIMELINE</Button>
+        </div>
       </div>
     )
   }

@@ -6,12 +6,13 @@ https://github.com/epoberezkin/ajv/issues/708
 ## Added packages / helpers
 - redux
 - redux devtools
+- normalize
+- sass + very beginning theme
 
 ## To Add
 - propTypes
 - eslint + airbnb config
 - nvm
-- scss
 - proper theme styling / opinion
 - better error handling console
 - responsive design
