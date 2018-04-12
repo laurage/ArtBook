@@ -6,7 +6,6 @@ import { MONTH } from '../../constants'
 
 import { CalendarMonth } from '../CalendarMonth'
 import { ChevronLeft, ChevronRight } from '../SvgIcons'
-import { Button } from '../Button'
 
 export class Calendar extends React.Component {
   constructor() {
@@ -35,7 +34,7 @@ export class Calendar extends React.Component {
 
   render() {
     return (
-      <div className="box-container-top">
+      <div>
         <div className="box-container-in calendar-header">
           <div className="month-name">
             {`${MONTH[this.state.displayedMoment.month()]} ${this.state.displayedMoment.year()}`}
@@ -49,9 +48,6 @@ export class Calendar extends React.Component {
         </div>
         <div className="box-container-in">
           <CalendarMonth displayedMoment={this.state.displayedMoment}/>
-        </div>
-        <div className="box-container-in">
-          <Button>SAVE DRAFT TIMELINE</Button>
         </div>
       </div>
     )

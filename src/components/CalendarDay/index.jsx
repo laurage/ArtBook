@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import './style.css'
-import { setSelectedDay, getSelectedDay } from '../../actions'
+import { setSelectedDay } from '../../actions'
 
 export class CalendarDay extends React.Component {
   constructor() {
@@ -15,10 +15,6 @@ export class CalendarDay extends React.Component {
       }
     }
     this.handleClick = this.handleClick.bind(this)
-  }
-
-  ComponentWillUpdate() {
-    this.props.getSelectedDay()
   }
 
   handleClick(selectedDay) {
