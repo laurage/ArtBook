@@ -33,7 +33,6 @@ export class Calendar extends React.Component {
   }
 
   render() {
-    console.log(this.state.displayedMoment)
     return (
       <div>
         <div className="month-name">
