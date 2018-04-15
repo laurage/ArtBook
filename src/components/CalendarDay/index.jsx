@@ -2,18 +2,11 @@ import React from 'react'
 import { connect } from 'react-redux'
 import './style.css'
 import { setSelectedDay } from '../../actions'
+import stringifyMoment from '../../helpers/stringifyMoment'
 
 export class CalendarDay extends React.Component {
   constructor() {
     super()
-    this.state = {
-      selected: false,
-      onSelectedSlot: false,
-      selectedCellId: {
-        first: null,
-        second: null,
-      }
-    }
     this.handleClick = this.handleClick.bind(this)
   }
 
@@ -22,7 +15,7 @@ export class CalendarDay extends React.Component {
   }
 
   isSelected(day, selectedDayFirst, selectedDaySecond) {
-    return (selectedDayFirst === day) || (selectedDaySecond === day)
+    return (stringifyMoment(selectedDayFirst) === stringifyMoment(day)) || (stringifyMoment(selectedDaySecond) === stringifyMoment(day))
   }
 
   isOnSelectedSlot(day, selectedDayFirst, selectedDaySecond) {
@@ -33,7 +26,10 @@ export class CalendarDay extends React.Component {
     const { dayNumber, dayName, day, selectedDayFirst, selectedDaySecond } = this.props
     return(
       <div
-        className={`day ${ this.isSelected(day, selectedDayFirst, selectedDaySecond) ? "selected" : "unselected" } ${ this.isOnSelectedSlot(day, selectedDayFirst, selectedDaySecond) ? "on-selected-slot" : "" }`}
+        className={
+          `day ${ this.isSelected(day, selectedDayFirst, selectedDaySecond) ? "selected" : "unselected" } 
+          ${ this.isOnSelectedSlot(day, selectedDayFirst, selectedDaySecond) ? "on-selected-slot" : "" }`
+        }
         onClick={this.handleClick.bind(this, day)}>
         <div className="dayName">
           {dayName}
