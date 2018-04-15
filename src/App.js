@@ -4,7 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import store from './store'
 
 import { DraftTimeline } from './containers/DraftTimeline'
-import { DraftSchedules } from './containers/DraftSchedules'
+import DraftSchedules from './containers/DraftSchedules'
 
 class App extends Component {
   render() {

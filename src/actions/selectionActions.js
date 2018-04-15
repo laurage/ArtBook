@@ -12,5 +12,3 @@ export const setNumberOfArtistsToBook = (numberOfArtistsToBook) => ({
     type: 'SET_NUMBER_OF_ARTISTS_TO_BOOK',
     numberOfArtistsToBook,
 })
-
-// if selectedDayScheduleSecond and numberOfArtistsToBook is null then call popup to ask user
