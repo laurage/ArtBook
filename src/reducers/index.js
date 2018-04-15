@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import { selectionPeriod } from './selectionPeriod'
+import { selectionReducer } from './selectionReducer'
 
 let reducers = {
-  selectionPeriod,
+  selection: selectionReducer,
 }
 
 export default combineReducers(reducers)

@@ -1,2 +1,20 @@
-$primary-color: #00BBD3;
-$primary-color--darker: #008C9E;
+$white: #FFFFFF;
+$charlotte: #9DEDF7;
+$robins-egg-blue: #00BBD3;
+$deep-cerulean: #008C9E;
+$athens-gray: #F9F9FA;
+$white-sand: #F5F5F5;
+$nobel: #B7B7B7;
+$alto: #D8D8D8;
+
+$neutral: $white;
+
+$primary-color--lighter: $charlotte;
+$primary-color--hue: $robins-egg-blue;
+$primary-color--darker: $deep-cerulean;
+
+$secondary-color--hue: $athens-gray;
+$secondary-color--darker: $white-sand;
+$secondary-color--darkest: $nobel;
+
+$actions-disabled: $alto;

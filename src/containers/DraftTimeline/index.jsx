@@ -8,7 +8,7 @@ export class DraftTimeline extends React.Component {
   render() {
     return (
       <div className="box-container-top">
-        <Calendar/>
+        <Calendar mode="draftTimeline"/>
         <div className="box-container-in">
           <Button>SAVE DRAFT TIMELINE</Button>
         </div>

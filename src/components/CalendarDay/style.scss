@@ -1,0 +1,46 @@
+@import "../../assets/styles/variables.scss";
+@import "../../assets/styles/utilities.scss";
+
+.day {
+  width: 88px;
+  height: 88px;
+  border: 1px solid $secondary-color--darker;
+  font-size: 9px;
+}
+
+.day.draftTimeline:hover {
+  cursor: pointer;
+  background: $secondary-color--darker;
+}
+
+.dayName {
+  padding: 10px;
+}
+
+.dayNumber {
+  padding: 0px 10px 10px 10px;
+}
+
+.unselected {
+  background-color: $secondary-color--hue;
+}
+
+.draftTimeline {
+  &.selected {
+  background-color: $primary-color--hue;
+  }
+
+  &.on-selected-slot {
+    background-color: $primary-color--lighter;
+  }
+}
+
+.draftSchedules {
+  &.selected {
+    background-color: $neutral;
+  }
+
+  &.on-selected-slot {
+    background-color: $neutral;
+  }
+}

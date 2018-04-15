@@ -1,8 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import './style.css'
-import { setSelectedDay } from '../../actions'
+import './style.scss'
+import { setSelectedDay, setSelectedDaySchedule } from '../../actions'
 import stringifyMoment from '../../helpers/stringifyMoment'
+import { SchedulePlaceholder } from '../SchedulePlaceholder'
+
+const renderSchedulePlaceholder = <SchedulePlaceholder/>
 
 export class CalendarDay extends React.Component {
   constructor() {
@@ -10,8 +13,8 @@ export class CalendarDay extends React.Component {
     this.handleClick = this.handleClick.bind(this)
   }
 
-  handleClick(selectedDay) {
-    this.props.setSelectedDay(selectedDay)
+  handleClick(selectedDay, mode) {
+    mode === 'draftTimeline' ? this.props.setSelectedDay(selectedDay) : this.props.setSelectedDaySchedule(selectedDay)
   }
 
   isSelected(day, selectedDayFirst, selectedDaySecond) {
@@ -23,32 +26,34 @@ export class CalendarDay extends React.Component {
   }
 
   render() {
-    const { dayNumber, dayName, day, selectedDayFirst, selectedDaySecond } = this.props
+    const { dayNumber, dayName, day, selectedDayFirst, selectedDaySecond, mode } = this.props
     return(
       <div
         className={
-          `day ${ this.isSelected(day, selectedDayFirst, selectedDaySecond) ? "selected" : "unselected" } 
+          `day ${mode} ${ this.isSelected(day, selectedDayFirst, selectedDaySecond) ? "selected" : "unselected" } 
           ${ this.isOnSelectedSlot(day, selectedDayFirst, selectedDaySecond) ? "on-selected-slot" : "" }`
         }
-        onClick={this.handleClick.bind(this, day)}>
+        onClick={this.handleClick.bind(this, day, mode)}>
         <div className="dayName">
           {dayName}
         </div>
         <div className="dayNumber">
           {dayNumber}
         </div>
+        {renderSchedulePlaceholder}
       </div>
     )
   }
 }
 
-const mapStateToProps = ({ selectionPeriod }) => ({
-  selectedDayFirst: selectionPeriod.selectedDayFirst,
-  selectedDaySecond: selectionPeriod.selectedDaySecond,
+const mapStateToProps = ({ selection }) => ({
+  selectedDayFirst: selection.selectedDayFirst,
+  selectedDaySecond: selection.selectedDaySecond,
 })
 
 const mapDispatchToProps = {
   setSelectedDay,
+  setSelectedDaySchedule,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CalendarDay)
