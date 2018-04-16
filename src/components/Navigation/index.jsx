@@ -5,22 +5,31 @@ import routesNames from '../../assets/data/routesNames'
 
 import { TimelineIcon, ScheduleIcon, BookArtistsIcon } from '../SvgIcons'
 
-export const Navigation = () => (
+export const Navigation = ({pathname}) => (
     <div className="navigation">
-        <div className="navigation-icons-position">
-            <div className="navigation-icons">
-                <Link to={routesNames.draftTimeline}>
-                    <TimelineIcon/> 
-                </Link>
-                <Link to={routesNames.draftSchedules}>
-                    <ScheduleIcon/> 
-                </Link>
-                <Link to={routesNames.bookArtists}>
-                    <BookArtistsIcon/>
-                </Link>
+        <div className="navigation__icons-position">
+            <div className="navigation__icons">
+                <div className="navigation__icons-item--completed">
+                    <Link to={routesNames.draftTimeline}>
+                        <TimelineIcon/> 
+                    </Link>
+                </div>
+                <div className={`${
+                    (pathname === routesNames.draftSchedules
+                        || pathname === routesNames.bookArtists
+                     ) ? "navigation__icons-item--completed" : "" }`}>
+                    <Link to={routesNames.draftSchedules}>
+                        <ScheduleIcon/> 
+                    </Link>
+                </div>
+                <div className={`${pathname === routesNames.bookArtists ? "navigation__icons-item--completed" : "" }`}>
+                    <Link to={routesNames.bookArtists}>
+                        <BookArtistsIcon/>
+                    </Link>
+                </div>
             </div>
         </div>
-        <div className="navigation-background"></div>
+        <div className="navigation__background"></div>
     </div>
 )
 

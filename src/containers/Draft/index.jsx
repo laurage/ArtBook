@@ -11,10 +11,11 @@ import Footing from '../../components/Footing'
 
 export class Draft extends React.Component {
   render() {
-    const { data, selectedDayScheduleSecond, numberOfArtistsToBook } = this.props
+    const { data, selectedDayScheduleSecond, numberOfArtistsToBook, location } = this.props
+    console.log(this.props)
     return (
       <div className="">
-        <Navigation/>
+        <Navigation pathname={location.pathname}/>
         <div className="box-container-top box-container--grey">
           <InstructionBar title={data && data.title} instructions={data && data.instructions}/>
         </div>

@@ -4,14 +4,14 @@
 .navigation {
     position: relative;
 
-    &-icons-position {
+    &__icons-position {
         position: absolute;
         top: -20px;
         left: 0px;
         width: 100%;
     }
 
-    &-icons {
+    &__icons {
         width: 60%;
         display: flex;
         justify-content: space-between;
@@ -25,13 +25,29 @@
 
             #icon {
                 path {
-                    fill: $white;
+                    fill: $neutral;
+                }
+            }
+        }
+
+        &-item--completed {
+            svg {
+                circle {
+                    fill: $primary-color--hue;
+                }
+    
+                #icon {
+                    path {
+                        fill: $neutral;
+                    }
                 }
             }
         }
     }
 
-    &-background {
+    
+
+    &__background {
         background-color: $secondary-color--hue;
         height: 20px;
     }
