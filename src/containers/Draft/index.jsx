@@ -27,7 +27,7 @@ export class Draft extends React.Component {
             </div>)
           }
         </div>
-        <div className="box-container-top box-container--grey">
+        <div className="draft__button box-container-top box-container--grey">
             <Button linkTo={data && data.button && data.button.linkTo}>{data && data.button && data.button.title}</Button>
         </div>
       </div>
