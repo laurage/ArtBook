@@ -2,23 +2,13 @@ import React from 'react'
 import { connect } from 'react-redux'
 import './style.scss'
 import { setSelectedDay, setSelectedDaySchedule } from '../../actions'
-import stringifyMoment from '../../helpers/stringifyMoment'
+import isWeekDay from '../../helpers/isWeekDay'
+import dayIsSelected from '../../helpers/dayIsSelected'
+import dayIsOnSelectedSlot from '../../helpers/dayIsOnSelectedSlot'
 
 export class CalendarDaySplash extends React.Component {
   handleClick(selectedDay) {
     this.props.setSelectedDay(selectedDay)
-  }
-
-  isSelected(day, selectedDayFirst, selectedDaySecond) {
-    return (stringifyMoment(selectedDayFirst) === stringifyMoment(day)) || (stringifyMoment(selectedDaySecond) === stringifyMoment(day))
-  }
-
-  isOnSelectedSlot(day, selectedDayFirst, selectedDaySecond) {
-    return day.isBefore(selectedDaySecond) && day.isAfter(selectedDayFirst)
-  }
-
-  isWeekDay(day) {
-    return day.day() !== 0 && day.day() !== 1
   }
 
   render() {
@@ -27,8 +17,8 @@ export class CalendarDaySplash extends React.Component {
       <div
         className={
           `day
-          ${ this.isSelected(day, selectedDayFirst, selectedDaySecond) ? "selected" : "unselected" }  
-          ${ this.isOnSelectedSlot(day, selectedDayFirst, selectedDaySecond) ? "on-selected-slot" : "" }`
+          ${ dayIsSelected(day, selectedDayFirst, selectedDaySecond) ? "selected" : "unselected" }  
+          ${ dayIsOnSelectedSlot(day, selectedDayFirst, selectedDaySecond) ? "on-selected-slot" : "" }`
         }
         onClick={mode === "draftTimeline" ? this.handleClick.bind(this, this.props.day) : undefined}>
         {dayName &&

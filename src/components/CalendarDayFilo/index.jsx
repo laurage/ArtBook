@@ -2,23 +2,13 @@ import React from 'react'
 import { connect } from 'react-redux'
 import './style.scss'
 import { setSelectedDay, setSelectedDaySchedule } from '../../actions'
-import stringifyMoment from '../../helpers/stringifyMoment'
+import isWeekDay from '../../helpers/isWeekDay'
+import dayIsSelected from '../../helpers/dayIsSelected'
+import dayIsOnSelectedSlot from '../../helpers/dayIsOnSelectedSlot'
 
 export class CalendarDayFilo extends React.Component {
   handleClick(selectedDay) {
     this.props.setSelectedDaySchedule(selectedDay)
-  }
-
-  isSelected(day, selectedDayFirst, selectedDaySecond) {
-    return (stringifyMoment(selectedDayFirst) === stringifyMoment(day)) || (stringifyMoment(selectedDaySecond) === stringifyMoment(day))
-  }
-
-  isOnSelectedSlot(day, selectedDayFirst, selectedDaySecond) {
-    return day.isBefore(selectedDaySecond) && day.isAfter(selectedDayFirst)
-  }
-
-  isWeekDay(day) {
-    return day.day() !== 6 && day.day() !== 0
   }
 
   render() {
@@ -27,9 +17,9 @@ export class CalendarDayFilo extends React.Component {
       <div
         className={
           `day
-          ${ this.isWeekDay(day) &&
-          (this.isSelected(day, selectedDayScheduleFirst, selectedDayScheduleSecond) 
-          || this.isOnSelectedSlot(day, selectedDayScheduleFirst, selectedDayScheduleSecond)) ? "selected" : "unselected" }`
+          ${isWeekDay(day) &&
+          (dayIsSelected(day, selectedDayScheduleFirst, selectedDayScheduleSecond) 
+          || dayIsOnSelectedSlot(day, selectedDayScheduleFirst, selectedDayScheduleSecond)) ? "selected" : "unselected" }`
         }
         onClick={this.handleClick.bind(this, this.props.day)}>
         <div className="schedule-placeholder"></div>

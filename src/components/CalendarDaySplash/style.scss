@@ -53,6 +53,10 @@
     font-size: 9px;
   }
   
+  .unselected {
+    background-color: $secondary-color--hue;
+  }
+  
   .selected {
     background-color: $neutral;
     border: 1px solid $secondary-color--hue;
