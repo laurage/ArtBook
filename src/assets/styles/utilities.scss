@@ -1,4 +1,7 @@
 @import "../../assets/styles/variables.scss";
+html {
+  background-color: $actions-disabled;
+}
 
 h1 {
   font-size: $heading-1;
@@ -16,10 +19,20 @@ p {
   padding: $margin-size-4 $margin-size-4 $margin-size-4 $margin-size-4;
 }
 
-.box-container-in {
-  // margin: 0px 20px 20px 0px;
+.box-container-popup-out {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-container-popup-in {
+  width: 900px;
 }
 
 .box-container--grey {
   background-color: $secondary-color--hue;
+}
+
+.box-container--neutral {
+  background-color: $neutral;
 }

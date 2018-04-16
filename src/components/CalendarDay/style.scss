@@ -15,8 +15,8 @@
 
 .cell-bg {
   &.day {
-    width: 88px;
-    height: 88px;
+    width: 55px;
+    height: 55px;
     border: 1px solid $secondary-color--darker;
     font-size: 9px;
   }
@@ -52,8 +52,8 @@
 }
 
 .cell-foreground.selected-foreground {
-  width: 90px; // for some reason needs to be 2 more px than other box
-  height: 88px;
+  width: 57px; // for some reason needs to be 2 more px than other box
+  height: 55px;
   background-color: red;
   .schedule-placeholder {
     margin-top: 60px;

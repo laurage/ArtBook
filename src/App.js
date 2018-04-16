@@ -17,18 +17,20 @@ class App extends Component {
         <header className="App-header">
         </header>
         <Provider store={store}>
-          <div>
-            <div className="box-container-top">
-              <Heading/>
+          <div className="box-container-popup-out">
+            <div className="box-container-popup-in">
+              <div className="box-container-top box-container--neutral">
+                <Heading/>
+              </div>
+              <BrowserRouter>
+                <Switch>
+                  <PropsRoute exact path="/" component={Draft} data={data.draftTimeline}/>
+                  <PropsRoute exact path="/draftSchedules" component={Draft} data={data.draftSchedules}/>
+                  <PropsRoute exact path="/bookArtists" component={Draft} data={data.bookArtists}/>
+                </Switch>
+              </BrowserRouter>
             </div>
-            <BrowserRouter>
-              <Switch>
-                <PropsRoute exact path="/" component={Draft} data={data.draftTimeline}/>
-                <PropsRoute exact path="/draftSchedules" component={Draft} data={data.draftSchedules}/>
-                <PropsRoute exact path="/bookArtists" component={Draft} data={data.bookArtists}/>
-              </Switch>
-            </BrowserRouter>
-          </div>
+            </div>
         </Provider>
       </div>
     );

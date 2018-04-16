@@ -19,7 +19,7 @@ export class Draft extends React.Component {
         <div className="box-container-top box-container--grey">
           <InstructionBar title={data && data.title} instructions={data && data.instructions}/>
         </div>
-        <div className="box-container-top">
+        <div className="box-container-top box-container--neutral">
           <Calendar mode="draftSchedules"/>
           { selectedDayScheduleSecond &&
             (<div className="">
