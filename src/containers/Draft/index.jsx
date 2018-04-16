@@ -11,13 +11,12 @@ import Footing from '../../components/Footing'
 
 export class Draft extends React.Component {
   render() {
-    console.log(this.props)
     const { data, selectedDayScheduleSecond, numberOfArtistsToBook } = this.props
     return (
       <div className="">
-        <Navigation />
+        <Navigation/>
         <div className="box-container-top box-container--grey">
-          <InstructionBar title={data.title} instructions={data.instructions}/>
+          <InstructionBar title={data && data.title} instructions={data && data.instructions}/>
         </div>
         <div className="box-container-top">
           <Calendar mode="draftSchedules"/>
@@ -28,7 +27,7 @@ export class Draft extends React.Component {
           }
         </div>
         <div className="box-container-top box-container--grey">
-            <Button>{data.button}</Button>
+            <Button linkTo={data && data.button && data.button.linkTo}>{data && data.button && data.button.title}</Button>
         </div>
       </div>
     )

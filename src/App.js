@@ -36,6 +36,3 @@ class App extends Component {
 }
 
 export default App;
-
-{/* <Route exact path='/' render={() => DraftSchedules}/>draftTimeline
-<Route exact path='/draftSchedules' render={() => DraftSchedules}/> */}
