@@ -33,7 +33,7 @@ export const selectionReducer = (state = initialState, { type, selectedDay, numb
         })
       }
       case 'SET_SELECTED_DAY_SCHEDULE':
-        if (state.selectedDayScheduleFirst === null) {
+        if (state.selectedDayScheduleFirst === null || (state.selectedDayScheduleFirst && selectedDay.isBefore(state.selectedDayScheduleFirst))) {
           return Object.assign({}, state, {
             selectedDayScheduleFirst: selectedDay,
           })
