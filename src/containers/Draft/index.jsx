@@ -9,14 +9,15 @@ import Navigation from '../../components/Navigation'
 import InstructionBar from '../../components/InstructionBar'
 import Footing from '../../components/Footing'
 
-export class DraftSchedules extends React.Component {
+export class Draft extends React.Component {
   render() {
-    const { selectedDayScheduleSecond, numberOfArtistsToBook } = this.props
+    console.log(this.props)
+    const { data, selectedDayScheduleSecond, numberOfArtistsToBook } = this.props
     return (
       <div className="">
         <Navigation />
         <div className="box-container-top box-container--grey">
-          <InstructionBar title="Draft Artists Schedules" instructions="Select the number of artists needed during the course of this task."/>
+          <InstructionBar title={data.title} instructions={data.instructions}/>
         </div>
         <div className="box-container-top">
           <Calendar mode="draftSchedules"/>
@@ -27,7 +28,7 @@ export class DraftSchedules extends React.Component {
           }
         </div>
         <div className="box-container-top box-container--grey">
-            <Button>SAVE DRAFT SCHEDULES</Button>
+            <Button>{data.button}</Button>
         </div>
       </div>
     )
@@ -39,4 +40,4 @@ const mapStateToProps = ({selection}) => ({
   numberOfArtistsToBook: selection.numberOfArtistsToBook,
 })
 
-export default connect(mapStateToProps, null)(DraftSchedules)
+export default connect(mapStateToProps, null)(Draft)
