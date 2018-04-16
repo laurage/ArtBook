@@ -28,15 +28,19 @@ export class SchedulesPopUp extends React.Component {
 
     render(){
         return(
-            <form>
-                <input 
-                    type="number" 
-                    value={this.state.userInput} 
-                    onChange={this.handleChange}
-                    placeholder='Number of artists to book'
-                />
-                <Button onClick={this.handleClick(this.state.userInput)}>DRAFT THIS SCHEDULE</Button>
-            </form>
+            <div className="schedules-popup">
+                <form>
+                    <input className="schedules-popup__input"
+                        type="number" 
+                        value={this.state.userInput} 
+                        onChange={this.handleChange}
+                        placeholder='Number of artists to book'
+                    />
+                </form>
+                <Button 
+                    onClick={this.handleClick(this.state.userInput)}
+                >DRAFT THIS SCHEDULE</Button>
+            </div>
         )
     }
 }
@@ -46,3 +50,7 @@ const mapDispatchToProps = {
 }
 
 export default connect(null, mapDispatchToProps)(SchedulesPopUp)
+
+{/* 
+<Button onClick={this.handleClick(this.state.userInput)}>DRAFT THIS SCHEDULE</Button>
+*/}

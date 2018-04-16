@@ -1,0 +1,11 @@
+@import "../../assets/styles/variables.scss";
+@import "../../assets/styles/utilities.scss";
+
+.schedules-popup {
+    display: inline-block; 
+    
+    &__input {
+        width: 100%;
+        height: 25px;
+    }
+}
