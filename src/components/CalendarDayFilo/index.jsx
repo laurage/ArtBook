@@ -18,7 +18,7 @@ export class CalendarDayFilo extends React.Component {
   }
 
   isWeekDay(day) {
-    return day.day() !== 0 && day.day() !== 1
+    return day.day() !== 6 && day.day() !== 0
   }
 
   render() {
