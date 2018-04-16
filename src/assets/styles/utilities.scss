@@ -1,7 +1,25 @@
+@import "../../assets/styles/variables.scss";
+
+h1 {
+  font-size: $heading-1;
+}
+
+h2 {
+  font-size: $heading-2;
+}
+
+p {
+  font-size: $paragraph-1;
+}
+
 .box-container-top {
-  margin: 20px 20px 20px 20px;
+  padding: $margin-size-4 $margin-size-4 $margin-size-4 $margin-size-4;
 }
 
 .box-container-in {
-  margin: 0px 20px 20px 0px;
+  // margin: 0px 20px 20px 0px;
+}
+
+.box-container--grey {
+  background-color: $secondary-color--hue;
 }

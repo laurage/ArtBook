@@ -5,6 +5,7 @@ import store from './store'
 
 import { DraftTimeline } from './containers/DraftTimeline'
 import DraftSchedules from './containers/DraftSchedules'
+import Heading from './components/Heading'
 
 class App extends Component {
   render() {
@@ -13,12 +14,17 @@ class App extends Component {
         <header className="App-header">
         </header>
         <Provider store={store}>
-          <BrowserRouter>
-            <Switch>
-              <Route exact path='/' component={DraftTimeline}/>
-              <Route exact path='/draftSchedules' component={DraftSchedules}/>
-            </Switch>
-          </BrowserRouter>
+          <div>
+            <div className="box-container-top">
+              <Heading/>
+            </div>
+            <BrowserRouter>
+              <Switch>
+                <Route exact path='/' component={DraftTimeline}/>
+                <Route exact path='/draftSchedules' component={DraftSchedules}/>
+              </Switch>
+            </BrowserRouter>
+          </div>
         </Provider>
       </div>
     );
