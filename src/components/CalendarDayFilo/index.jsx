@@ -5,8 +5,8 @@ import { setSelectedDay, setSelectedDaySchedule } from '../../actions'
 import stringifyMoment from '../../helpers/stringifyMoment'
 
 export class CalendarDayFilo extends React.Component {
-  handleClick(selectedDay, mode) {
-    mode === 'draftTimeline' ? this.props.setSelectedDay(selectedDay) : this.props.setSelectedDaySchedule(selectedDay)
+  handleClick(selectedDay) {
+    this.props.setSelectedDaySchedule(selectedDay)
   }
 
   isSelected(day, selectedDayFirst, selectedDaySecond) {
@@ -22,43 +22,28 @@ export class CalendarDayFilo extends React.Component {
   }
 
   render() {
-    const { dayNumber, dayName, day, selectedDayFirst, selectedDaySecond, mode, typeOfCell, selectedDayScheduleFirst, selectedDayScheduleSecond } = this.props
+    const { day, selectedDayScheduleFirst, selectedDayScheduleSecond } = this.props
     return(
       <div
         className={
-          `day ${mode} ${typeOfCell} 
-          ${ this.isSelected(day, selectedDayScheduleFirst, selectedDayScheduleSecond) ? "selected-foreground" : "unselected-foreground" } 
-          ${ this.isOnSelectedSlot(day, selectedDayFirst, selectedDaySecond) ? "on-selected-slot" : "" }`
+          `day
+          ${ this.isWeekDay(day) &&
+          (this.isSelected(day, selectedDayScheduleFirst, selectedDayScheduleSecond) 
+          || this.isOnSelectedSlot(day, selectedDayScheduleFirst, selectedDayScheduleSecond)) ? "selected" : "unselected" }`
         }
-        onClick={this.handleClick.bind(this, this.props.day, this.props.mode)}>
-        {dayName &&
-          (<div className="dayName">
-            {dayName}
-          </div>)
-        }
-        {dayNumber &&
-          (<div className="dayNumber">
-            {dayNumber}
-          </div>)
-        }
-        {typeOfCell==='cell-foreground' &&
-          (
-            <div className="schedule-placeholder"></div>
-          )}
+        onClick={this.handleClick.bind(this, this.props.day)}>
+        <div className="schedule-placeholder"></div>
       </div>
     )
   }
 }
 
 const mapStateToProps = ({ selection }) => ({
-  selectedDayFirst: selection.selectedDayFirst,
-  selectedDaySecond: selection.selectedDaySecond,
   selectedDayScheduleFirst: selection.selectedDayScheduleFirst,
   selectedDayScheduleSecond: selection.selectedDayScheduleSecond,
 })
 
 const mapDispatchToProps = {
-  setSelectedDay,
   setSelectedDaySchedule,
 }
 

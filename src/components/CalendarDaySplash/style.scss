@@ -9,21 +9,21 @@
   padding: 0px 5px 5px 5px;
 }
 
-.day:hover {
-  cursor: pointer;
-  background: $secondary-color--darker;
-}
-
-.unselected {
-  background-color: $secondary-color--hue;
-}
-
 .week-bg {
   .day {
     width: 55px;
     height: 55px;
     border: 1px solid $secondary-color--darker;
     font-size: 9px;
+
+    &:hover {
+      cursor: pointer;
+      background: $secondary-color--darker;
+    }
+  }
+
+  .unselected {
+    background-color: $secondary-color--hue;
   }
   
   .selected {
@@ -38,7 +38,7 @@
   .on-selected-slot {
     background-color: $primary-color--lighter;
     border: 1px solid $primary-color--lighter;
-    
+
     &:hover {
       background-color: $primary-color--hue;
     }

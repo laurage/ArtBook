@@ -3,6 +3,7 @@ import './style.scss'
 import { DAYS } from '../../constants'
 
 import CalendarDaySplash from '../CalendarDaySplash'
+import CalendarDayFilo from '../CalendarDayFilo'
 
 export class CalendarWeek extends React.Component {
   render() {
@@ -12,9 +13,9 @@ export class CalendarWeek extends React.Component {
     let daysOfWeekForeground = []
     for(let i = 0; i <= 6; i++) {
       daysOfWeekBackground.push(<CalendarDaySplash key={week[i]} day={week[i]} mode={mode} dayName={DAYS[i]} dayNumber={week[i].date()}/>)
-      // if (mode === 'draftSchedules') {
-      //   daysOfWeekBackground.push(<CalendarDaySplash key={week[i]} day={week[i]} mode={mode} dayName={DAYS[i]} dayNumber={week[i].date()}/>)
-      // }
+      if (mode === 'draftSchedules') {
+        daysOfWeekForeground.push(<CalendarDayFilo key={week[i]} day={week[i]} mode={mode}/>)
+      }
       // daysOfWeekForeground.push(<CalendarDay key={week[i]} day={week[i]} mode={mode} typeOfCell={'cell-foreground'}/>)
     }
     return(

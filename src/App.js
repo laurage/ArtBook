@@ -4,7 +4,6 @@ import { BrowserRouter, Switch } from 'react-router-dom'
 import PropsRoute from './components/PropsRoute'
 import store from './store'
 
-import { DraftTimeline } from './containers/DraftTimeline'
 import Draft from './containers/Draft'
 import Heading from './components/Heading'
 
