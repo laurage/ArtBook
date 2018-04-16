@@ -4,7 +4,7 @@ import './style.scss'
 import { setSelectedDay, setSelectedDaySchedule } from '../../actions'
 import stringifyMoment from '../../helpers/stringifyMoment'
 
-export class CalendarDay extends React.Component {
+export class CalendarDayFilo extends React.Component {
   handleClick(selectedDay, mode) {
     mode === 'draftTimeline' ? this.props.setSelectedDay(selectedDay) : this.props.setSelectedDaySchedule(selectedDay)
   }
@@ -62,7 +62,7 @@ const mapDispatchToProps = {
   setSelectedDaySchedule,
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CalendarDay)
+export default connect(mapStateToProps, mapDispatchToProps)(CalendarDayFilo)
 
 
 // `day ${mode} ${typeOfCell} 

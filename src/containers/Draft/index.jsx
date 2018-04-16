@@ -20,12 +20,7 @@ export class Draft extends React.Component {
           <InstructionBar title={data && data.title} instructions={data && data.instructions}/>
         </div>
         <div className="box-container-top box-container--neutral">
-          <Calendar mode="draftSchedules"/>
-          { selectedDayScheduleSecond &&
-            (<div className="">
-              <SchedulesPopUp/>
-            </div>)
-          }
+          <Calendar mode="draftTimeline"/>
         </div>
         <div className="draft__button box-container-top box-container--grey">
             <Button linkTo={data && data.button && data.button.linkTo}>{data && data.button && data.button.title}</Button>
@@ -41,3 +36,10 @@ const mapStateToProps = ({selection}) => ({
 })
 
 export default connect(mapStateToProps, null)(Draft)
+
+// To add number of artists
+// { selectedDayScheduleSecond &&
+//   (<div className="">
+//     <SchedulesPopUp/>
+//   </div>)
+// }
