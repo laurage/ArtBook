@@ -38,11 +38,3 @@ const mapDispatchToProps = {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CalendarDayFilo)
-
-
-// `day ${mode} ${typeOfCell} 
-// ${ this.isSelected(day, selectedDayFirst, selectedDaySecond) ? "selected" : "unselected" } 
-// ${ this.isWeekDay(day) &&
-//   (this.isSelected(day, selectedDayScheduleFirst, selectedDayScheduleSecond) 
-//   || this.isOnSelectedSlot(day, selectedDayScheduleFirst, selectedDayScheduleSecond)) ? "selected-foreground" : "unselected-foreground" } 
-// ${ this.isOnSelectedSlot(day, selectedDayFirst, selectedDaySecond) ? "on-selected-slot" : "" }`

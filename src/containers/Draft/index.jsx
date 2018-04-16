@@ -14,7 +14,6 @@ import routesNames from '../../assets/data/routesNames'
 export class Draft extends React.Component {
   render() {
     const { data, selectedDayScheduleSecond, numberOfArtistsToBook, location } = this.props
-    console.log(this.props)
     return (
       <div className="">
         <Navigation pathname={location.pathname}/>

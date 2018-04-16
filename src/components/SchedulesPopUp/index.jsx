@@ -16,7 +16,6 @@ export class SchedulesPopUp extends React.Component {
     }
 
     handleClick(userInput) {
-        console.log(userInput)
         // this gets fired on onChange event too. Check what's happening. Possibly button should be submit and submit from <form> tag
         this.props.setNumberOfArtistsToBook(userInput)
     }

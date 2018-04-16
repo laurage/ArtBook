@@ -5,7 +5,7 @@ export const initialState = {
   selectedDayScheduleSecond: null,
   numberOfArtistsToBook: null,
 }
-// TODO: if change month panel, selected days still good (see redux tools) but selected day not shown in UI
+
 export const selectionReducer = (state = initialState, { type, selectedDay, numberOfArtistsToBook } = {}) => {
   if (!type) return state
   switch (type) {
