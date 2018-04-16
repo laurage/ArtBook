@@ -7,12 +7,14 @@ import CalendarDaySplash from '../CalendarDaySplash'
 export class CalendarWeek extends React.Component {
   render() {
     const { week, mode } = this.props
+    console.log(mode)
     let daysOfWeekBackground = []
     let daysOfWeekForeground = []
     for(let i = 0; i <= 6; i++) {
-      if (mode === 'draftTimeline') {
-        daysOfWeekBackground.push(<CalendarDaySplash key={week[i]} day={week[i]} mode={mode} dayName={DAYS[i]} dayNumber={week[i].date()}/>)
-      }
+      daysOfWeekBackground.push(<CalendarDaySplash key={week[i]} day={week[i]} mode={mode} dayName={DAYS[i]} dayNumber={week[i].date()}/>)
+      // if (mode === 'draftSchedules') {
+      //   daysOfWeekBackground.push(<CalendarDaySplash key={week[i]} day={week[i]} mode={mode} dayName={DAYS[i]} dayNumber={week[i].date()}/>)
+      // }
       // daysOfWeekForeground.push(<CalendarDay key={week[i]} day={week[i]} mode={mode} typeOfCell={'cell-foreground'}/>)
     }
     return(
@@ -23,8 +25,13 @@ export class CalendarWeek extends React.Component {
           </div>)
         }
         {mode === 'draftSchedules' && 
-          (<div className="week-content">
-            {daysOfWeekForeground}
+          (<div>
+            <div className="week-bg-disabled">
+              {daysOfWeekBackground}
+            </div>
+            <div className="week-content">
+              {daysOfWeekForeground}
+            </div>
           </div>)
         }
       </div>

@@ -9,6 +9,8 @@ import Navigation from '../../components/Navigation'
 import InstructionBar from '../../components/InstructionBar'
 import Footing from '../../components/Footing'
 
+import routesNames from '../../assets/data/routesNames'
+
 export class Draft extends React.Component {
   render() {
     const { data, selectedDayScheduleSecond, numberOfArtistsToBook, location } = this.props
@@ -20,7 +22,7 @@ export class Draft extends React.Component {
           <InstructionBar title={data && data.title} instructions={data && data.instructions}/>
         </div>
         <div className="box-container-top box-container--neutral">
-          <Calendar mode="draftTimeline"/>
+          <Calendar mode={location.pathname === routesNames.draftTimeline ? "draftTimeline" : "draftSchedules"}/>
         </div>
         <div className="draft__button box-container-top box-container--grey">
             <Button linkTo={data && data.button && data.button.linkTo}>{data && data.button && data.button.title}</Button>

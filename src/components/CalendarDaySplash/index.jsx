@@ -30,7 +30,7 @@ export class CalendarDaySplash extends React.Component {
           ${ this.isSelected(day, selectedDayFirst, selectedDaySecond) ? "selected" : "unselected" }  
           ${ this.isOnSelectedSlot(day, selectedDayFirst, selectedDaySecond) ? "on-selected-slot" : "" }`
         }
-        onClick={this.handleClick.bind(this, this.props.day)}>
+        onClick={mode === "draftTimeline" ? this.handleClick.bind(this, this.props.day) : undefined}>
         {dayName &&
           (<div className="dayName">
             {dayName}

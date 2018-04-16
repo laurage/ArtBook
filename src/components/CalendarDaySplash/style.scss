@@ -27,12 +27,39 @@
   }
   
   .selected {
-    background-color: $primary-color--hue;
+    background-color: $neutral;
     border: 1px solid $primary-color--hue;
+
+    &:hover {
+      background-color: $primary-color--hue;
+    }
   }
 
   .on-selected-slot {
     background-color: $primary-color--lighter;
     border: 1px solid $primary-color--lighter;
+    
+    &:hover {
+      background-color: $primary-color--hue;
+    }
+  }
+}
+
+.week-bg-disabled {
+  .day {
+    width: 55px;
+    height: 55px;
+    border: 1px solid $secondary-color--darker;
+    font-size: 9px;
+  }
+  
+  .selected {
+    background-color: $neutral;
+    border: 1px solid $secondary-color--hue;
+  }
+
+  .on-selected-slot {
+    background-color: $neutral;
+    border: 1px solid $secondary-color--hue;
   }
 }

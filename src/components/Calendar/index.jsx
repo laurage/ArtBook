@@ -48,7 +48,7 @@ export class Calendar extends React.Component {
           </span>
         </div>
         <div className="box-container-in">
-          <CalendarMonth displayedMoment={this.state.displayedMoment} mode={mode}/>
+        <CalendarMonth displayedMoment={this.state.displayedMoment} mode={mode}/>
         </div>
       </div>
     )
