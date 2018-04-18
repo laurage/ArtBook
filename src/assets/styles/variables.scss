@@ -1,2 +1,39 @@
-$primary-color: #00BBD3;
-$primary-color--darker: #008C9E;
+$white: #FFFFFF;
+$black: #000000;
+$charlotte: #9DEDF7;
+$robins-egg-blue: #00BBD3;
+$deep-cerulean: #008C9E;
+$athens-gray: #F9F9FA;
+$white-sand: #F5F5F5;
+$nobel: #B7B7B7;
+$alto: #D8D8D8;
+
+$neutral: $white;
+$yin: $black;
+
+$primary-color--lighter: $charlotte;
+$primary-color--hue: $robins-egg-blue;
+$primary-color--darker: $deep-cerulean;
+
+$secondary-color--hue: $athens-gray;
+$secondary-color--darker: $white-sand;
+$secondary-color--darkest: $nobel;
+
+$actions-disabled: $alto;
+
+$font-size-1: 18px;
+$font-size-2: 14px;
+$font-size-3: 12px;
+$font-size-4: 9px;
+
+$heading-1: $font-size-1;
+$heading-2: $font-size-2;
+$paragraph-1: $font-size-3;
+$paragraph-2: $font-size-4;
+
+$margin-size-1: 5px;
+$margin-size-2: 10px;
+$margin-size-3: 15px;
+$margin-size-4: 20px;
+
+$container-spacing: $margin-size-4;

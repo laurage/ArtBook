@@ -1,1 +1,1 @@
-export { setSelectedDay } from './selectionPeriodActions'
+export { setSelectedDay, setSelectedDaySchedule, setNumberOfArtistsToBook } from './selectionActions'

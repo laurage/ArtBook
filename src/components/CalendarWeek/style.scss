@@ -1,0 +1,14 @@
+.week-container {
+  position: relative;
+}
+
+.week-bg, .week-bg-disabled {
+  display: flex;
+}
+
+.week-content {
+  display: flex;
+  top: 0;
+  left: 0;
+  position: absolute;
+}

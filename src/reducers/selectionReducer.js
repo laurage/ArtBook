@@ -1,9 +1,12 @@
 export const initialState = {
   selectedDayFirst: null,
   selectedDaySecond: null,
+  selectedDayScheduleFirst: null,
+  selectedDayScheduleSecond: null,
+  numberOfArtistsToBook: null,
 }
-// TODO: if change month panel, selected days still good (see redux tools) but selected day not shown in UI
-export const selectionPeriod = (state = initialState, { type, selectedDay } = {}) => {
+
+export const selectionReducer = (state = initialState, { type, selectedDay, numberOfArtistsToBook } = {}) => {
   if (!type) return state
   switch (type) {
     case 'SET_SELECTED_DAY':
@@ -29,6 +32,20 @@ export const selectionPeriod = (state = initialState, { type, selectedDay } = {}
           selectedDaySecond: selectedDay,
         })
       }
+      case 'SET_SELECTED_DAY_SCHEDULE':
+        if (state.selectedDayScheduleFirst === null || (state.selectedDayScheduleFirst && selectedDay.isBefore(state.selectedDayScheduleFirst))) {
+          return Object.assign({}, state, {
+            selectedDayScheduleFirst: selectedDay,
+          })
+        } else {
+          return Object.assign({}, state, {
+            selectedDayScheduleSecond: selectedDay,
+          })
+        }
+      case 'SET_NUMBER_OF_ARTISTS_TO_BOOK':
+        return Object.assign({}, state, {
+          numberOfArtistsToBook,
+        })
     default:
       return state
   }
