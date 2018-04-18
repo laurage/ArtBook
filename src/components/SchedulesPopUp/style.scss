@@ -9,3 +9,19 @@
         height: 25px;
     }
 }
+
+.schedules-popup__input {
+    border: none;
+
+    &::placeholder {
+        font-style: italic;
+    }
+
+    &:hover {
+        outline: solid 2px $primary-color--hue;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}

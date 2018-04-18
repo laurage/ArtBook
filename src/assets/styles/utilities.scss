@@ -16,7 +16,11 @@ p {
 }
 
 .box-container-top {
-  padding: $margin-size-4 $margin-size-4 $margin-size-4 $margin-size-4;
+  padding: $margin-size-4;
+}
+
+.box-container-h {
+  padding: 0 $margin-size-4;
 }
 
 .box-container-popup-out {

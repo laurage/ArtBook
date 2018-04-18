@@ -35,17 +35,19 @@ export class Calendar extends React.Component {
   render() {
     const { mode } = this.props
     return (
-      <div>
-        <div className="box-container-in calendar-header">
-          <div className="month-name">
+      <div className="calendar__panel-container">
+        <div className="box-container-in calendar__header">
+          <div className="calendar__title">
             {`${MONTH[this.state.displayedMoment.month()]} ${this.state.displayedMoment.year()}`}
           </div>
-          <span className="chevron" onClick={this.showPreviousMonth}>
-            <ChevronLeft/>
-          </span>
-          <span className="chevron" onClick={this.showNextMonth}>
-            <ChevronRight/>
-          </span>
+          <div className = "calendar__chevrons">
+            <span className="chevron" onClick={this.showPreviousMonth}>
+              <ChevronLeft/>
+            </span>
+            <span className="chevron" onClick={this.showNextMonth}>
+              <ChevronRight/>
+            </span>
+          </div>
         </div>
         <div className="box-container-in">
         <CalendarMonth displayedMoment={this.state.displayedMoment} mode={mode}/>

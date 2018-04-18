@@ -1,7 +1,23 @@
 @import "../../assets/styles/utilities.scss";
 
-.calendar-header {
+.calendar__container {
   display: flex;
+}
+.calendar__panel-container {
+  display: inline-block;
+}
+
+.calendar__header {
+  display: flex;
+  justify-content: space-between
+}
+
+.calendar__title {
+  font-size: 14px;
+}
+
+.calendar__chevrons {
+  margin-bottom: -3px;
 }
 
 .chevron {

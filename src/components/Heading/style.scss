@@ -1,0 +1,19 @@
+@import "../../assets/styles/variables.scss";
+@import "../../assets/styles/utilities.scss";
+
+.heading__input {
+    font-size: $heading-1;
+    border: none;
+
+    &::placeholder {
+        font-style: italic;
+    }
+
+    &:hover {
+        outline: solid 2px $primary-color--hue;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}

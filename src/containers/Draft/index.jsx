@@ -20,10 +20,12 @@ export class Draft extends React.Component {
         <div className="box-container-top box-container--grey">
           <InstructionBar title={data && data.title} instructions={data && data.instructions}/>
         </div>
-        <div className="calendar box-container-top box-container--neutral">
+        <div className="calendar__container box-container-top box-container--neutral">
           <Calendar mode={location.pathname === routesNames.draftTimeline ? "draftTimeline" : "draftSchedules"}/>
           { selectedDayScheduleSecond &&
-            <SchedulesPopUp/>
+            (<div className="box-container-top">
+              <SchedulesPopUp/>
+              </div>)
           }
         </div>
         <div className="draft__button box-container-top box-container--grey">
