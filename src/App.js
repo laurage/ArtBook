@@ -18,7 +18,7 @@ class App extends Component {
         <Provider store={store}>
           <div className="box-container-popup-out">
             <div className="box-container-popup-in">
-              <div className="box-container-top box-container--neutral">
+              <div className="box-container box-container--neutral">
                 <Heading/>
               </div>
               <BrowserRouter>

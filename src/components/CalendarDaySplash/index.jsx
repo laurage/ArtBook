@@ -17,17 +17,17 @@ export class CalendarDaySplash extends React.Component {
       <div
         className={
           `day
-          ${ dayIsSelected(day, selectedDayFirst, selectedDaySecond) ? "selected" : "unselected" }  
-          ${ dayIsOnSelectedSlot(day, selectedDayFirst, selectedDaySecond) ? "on-selected-slot" : "" }`
+          ${ dayIsSelected(day, selectedDayFirst, selectedDaySecond) ? "splash__selected" : "splash__unselected" }  
+          ${ dayIsOnSelectedSlot(day, selectedDayFirst, selectedDaySecond) ? "splash__on-selected-slot" : "" }`
         }
         onClick={mode === "draftTimeline" ? this.handleClick.bind(this, this.props.day) : undefined}>
         {dayName &&
-          (<div className="dayName">
+          (<div className="splash__day-name">
             {dayName}
           </div>)
         }
         {dayNumber &&
-          (<div className="dayNumber">
+          (<div className="splash__day-number">
             {dayNumber}
           </div>)
         }

@@ -23,9 +23,9 @@ export class CalendarDayFilo extends React.Component {
           || dayIsOnSelectedSlot(day, selectedDayScheduleFirst, selectedDayScheduleSecond)) ? "selected" : "unselected" }`
         }
         onClick={this.handleClick.bind(this, this.props.day)}>
-        <div className="schedule-placeholder"></div>
-        <div className={(selectedDayScheduleFirst === day) && numberOfArtistsToBook ? "schedule__number-of-artists-to-book-container" : ""}>
-          <div className="schedule__number-of-artists-to-book">
+        <div className="calendar-schedule__filo"></div>
+        <div className={(selectedDayScheduleFirst === day) && numberOfArtistsToBook ? "calendar-schedule__number-of-artists-to-book-container" : ""}>
+          <div className="calendar-schedule__number-of-artists-to-book">
             {numberOfArtistsToBook}
           </div>
         </div>

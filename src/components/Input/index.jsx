@@ -13,7 +13,7 @@ const Input = ({className, type, value, onChange, onSubmit, placeholder, require
             />
         </div>
         {(submitValue || onSubmit) &&
-        (<div className="box-container-top">
+        (<div className="box-container">
             <input className="btn" type="submit" value={submitValue}/>
         </div>
         )}

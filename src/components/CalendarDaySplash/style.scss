@@ -1,11 +1,11 @@
 @import "../../assets/styles/variables.scss";
 @import "../../assets/styles/utilities.scss";
 
-.dayName {
+.splash__day-name {
   padding: 5px;
 }
 
-.dayNumber {
+.splash__day-number {
   padding: 0px 5px 5px 5px;
 }
 
@@ -22,11 +22,11 @@
     }
   }
 
-  .unselected {
+  .splash__unselected {
     background-color: $secondary-color--hue;
   }
   
-  .selected {
+  .splash__selected {
     background-color: $neutral;
     border: 1px solid $primary-color--hue;
 
@@ -35,7 +35,7 @@
     }
   }
 
-  .on-selected-slot {
+  .splash__on-selected-slot {
     background-color: $primary-color--lighter;
     border: 1px solid $primary-color--lighter;
 
@@ -53,16 +53,16 @@
     font-size: 9px;
   }
   
-  .unselected {
+  .splash__unselected {
     background-color: $secondary-color--hue;
   }
   
-  .selected {
+  .splash__selected {
     background-color: $neutral;
     border: 1px solid $secondary-color--hue;
   }
 
-  .on-selected-slot {
+  .splash__on-selected-slot {
     background-color: $neutral;
     border: 1px solid $secondary-color--hue;
   }

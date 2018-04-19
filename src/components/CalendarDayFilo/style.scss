@@ -9,7 +9,7 @@
     position: relative;
   }
   .selected {
-    .schedule-placeholder {
+    .calendar-schedule__filo {
       box-shadow: 0px 2px 0.2em $primary-color--darker;
       margin-top: 37px;
       width: 100%;
@@ -19,7 +19,7 @@
   }
 }
 
-.schedule__number-of-artists-to-book-container {
+.calendar-schedule__number-of-artists-to-book-container {
   box-shadow: 0px 2px 0.2em $primary-color--darker;  
   position: absolute;
   z-index: 2;
@@ -34,7 +34,7 @@
   align-items: center;
 }
 
-.schedule__number-of-artists-to-book {
+.calendar-schedule__number-of-artists-to-book {
   color: $neutral;
   font-size: 9px;
 }
