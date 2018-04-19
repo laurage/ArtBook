@@ -13,6 +13,7 @@ export class CalendarDayFilo extends React.Component {
 
   render() {
     const { day, selectedDayScheduleFirst, selectedDayScheduleSecond, numberOfArtistsToBook } = this.props
+
     return(
       <div
         className={

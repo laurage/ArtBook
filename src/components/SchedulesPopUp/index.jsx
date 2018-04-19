@@ -8,7 +8,10 @@ import Input from '../Input'
 class SchedulesPopUp extends React.Component {
     constructor(props) {
       super(props);
-      this.state = {value: ''};
+      this.state = {
+        value: '', 
+        // clicked: true,
+      };
   
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -20,21 +23,23 @@ class SchedulesPopUp extends React.Component {
   
     handleSubmit(event) {
       this.props.setNumberOfArtistsToBook(this.state.value)
+      this.setState({clicked: false});
       event.preventDefault();
     }
   
     render() {
       return (
-          <Input 
-                onSubmit={this.handleSubmit}
-                className="schedules-popup__input"
-                type="number"
-                value={this.state.value} 
-                onChange={this.handleChange}
-                placeholder="Number of artists to book"
-                required
-                submitValue="DRAFT THIS NUMBER"
-            /> 
+        // this.state.clicked &&
+          (<Input 
+            onSubmit={this.handleSubmit}
+            className="schedules-popup__input"
+            type="number"
+            value={this.state.value} 
+            onChange={this.handleChange}
+            placeholder="Number of artists to book"
+            required
+            submitValue="DRAFT THIS NUMBER"
+          />)
       )
     }
 }
